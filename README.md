@@ -134,3 +134,28 @@ void simpanKeFile(string namaFile) {
     out.close();
     cout << "Data disimpan ke file.\n";
 }
+
+// FILE HANDLING - Muat data dari file
+void muatDariFile(string namaFile) {
+    ifstream in(namaFile);
+    if (!in) return;
+
+    string baris;
+    while (getline(in, baris)) {
+        string nama = "", deadline = "", matkul = "", status = "";
+        int i = 0, tahap = 0;
+        while (i < baris.size()) {
+            if (baris[i] == '|') { tahap++; i++; continue; }
+            if (tahap == 0) nama += baris[i];
+            else if (tahap == 1) deadline += baris[i];
+            else if (tahap == 2) matkul += baris[i];
+            else if (tahap == 3) status += baris[i];
+            i++;
+        }
+        Tugas* t = buatTugas(nama, deadline, matkul);
+        t->selesai = (status == "1");
+        t->next = head;
+        head = t;
+    }
+    in.close();
+}
