@@ -1,33 +1,33 @@
-#include <iostream>     // Input/output
-#include <fstream>      // File handling
-#include <string>       // Tipe data string
+#include <iostream>     
+#include <fstream>      
+#include <string>       
 using namespace std;
 
 struct Tugas {
     string nama;
-    string deadline;    // Format: DD-MM-YYYY
+    string deadline;    // format: DD-MM-YYYY
     string matkul;
     bool selesai;
     Tugas* next;        // POINTER - menunjuk ke node berikutnya (linked list)
 };
 
-// POINTER - Penunjuk ke node pertama dalam linked list
+// POINTER - penunjuk ke node pertama dalam linked list
 Tugas* head = nullptr;
 
-// FUNCTION: Mengubah tanggal dari format DD-MM-YYYY menjadi angka YYYYMMDD
+// FUNCTION: ngubah tanggal dari format DD-MM-YYYY menjadi angka YYYYMMDD
 int ubahTanggalKeAngka(const string& tgl) {
     int d, m, y;
     sscanf(tgl.c_str(), "%d-%d-%d", &d, &m, &y);
     return y * 10000 + m * 100 + d;
 }
 
-// POINTER + LINKED LIST - Membuat node tugas baru
+// POINTER + LINKED LIST - buat node tugas baru
 Tugas* buatTugas(string nama, string deadline, string matkul) {
     Tugas* t = new Tugas{nama, deadline, matkul, false, nullptr};
     return t;
 }
 
-// LINKED LIST - Menambahkan tugas ke awal linked list
+// LINKED LIST - menambahkan tugas ke awal linked list
 void tambahTugas(string nama, string deadline, string matkul) {
     Tugas* baru = buatTugas(nama, deadline, matkul);
     baru->next = head;
@@ -35,7 +35,7 @@ void tambahTugas(string nama, string deadline, string matkul) {
     cout << "Tugas ditambahkan.\n";
 }
 
-// LINKED LIST - Menampilkan semua tugas dengan tampilan tabel (versi ASCII)
+// LINKED LIST - menampilkan semua tugas dengan tampilan tabel (versi ASCII)
 void tampilkanTugas() {
     if (!head) {
         cout << "Tidak ada tugas.";
@@ -57,7 +57,7 @@ void tampilkanTugas() {
     cout << "----------------------------------------------------------------------------------------\n";
 }
 
-// SEARCHING - Mencari tugas berdasarkan kata kunci
+// SEARCHING - mencari tugas berdasarkan kata kunci
 void cariTugas(string kunci) {
     Tugas* t = head;
     bool ditemukan = false;
@@ -74,7 +74,7 @@ void cariTugas(string kunci) {
         cout << "Tugas tidak ditemukan.\n";
 }
 
-// EDITING - Mengedit informasi tugas
+// EDITING - ngedit informasi tugas
 void editTugas(string namaLama) {
     Tugas* t = head;
     while (t) {
@@ -91,7 +91,7 @@ void editTugas(string namaLama) {
     cout << " Tugas tidak ditemukan.\n";
 }
 
-// Tandai tugas sebagai selesai
+// tandai tugas sebagai selesai
 void tandaiSelesai(string nama) {
     Tugas* t = head;
     while (t) {
@@ -105,7 +105,7 @@ void tandaiSelesai(string nama) {
     cout << "Tugas tidak ditemukan.\n";
 }
 
-// Menghapus tugas
+// menghapus tugas
 void hapusTugas(string nama) {
     Tugas* t = head;
     Tugas* sebelum = nullptr;
@@ -135,7 +135,7 @@ void simpanKeFile(string namaFile) {
     cout << "Data disimpan ke file.\n";
 }
 
-// FILE HANDLING - Muat data dari file
+// FILE HANDLING - muat data dari file
 void muatDariFile(string namaFile) {
     ifstream in(namaFile);
     if (!in) return;
