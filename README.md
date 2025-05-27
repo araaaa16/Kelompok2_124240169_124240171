@@ -122,3 +122,15 @@ void hapusTugas(string nama) {
     }
     cout << "Tugas tidak ditemukan.\n";
 }
+
+// FILE HANDLING - Simpan semua tugas ke file
+void simpanKeFile(string namaFile) {
+    ofstream out(namaFile);
+    Tugas* t = head;
+    while (t) {
+        out << t->nama << "|" << t->deadline << "|" << t->matkul << "|" << t->selesai << "\n";
+        t = t->next;
+    }
+    out.close();
+    cout << "Data disimpan ke file.\n";
+}
