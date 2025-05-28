@@ -159,3 +159,31 @@ void muatDariFile(string namaFile) {
     }
     in.close();
 }
+
+// SORTING - Bubble sort berdasarkan deadline
+void urutkanDeadline() {
+    if (!head || !head->next) return;
+
+    bool tukar;
+    do {
+        tukar = false;
+        Tugas* sekarang = head;
+        Tugas* sebelum = nullptr;
+        while (sekarang && sekarang->next) {
+            Tugas* setelah = sekarang->next;
+            if (ubahTanggalKeAngka(sekarang->deadline) > ubahTanggalKeAngka(setelah->deadline)) {
+                tukar = true;
+                if (sebelum) sebelum->next = setelah;
+                else head = setelah;
+                sekarang->next = setelah->next;
+                setelah->next = sekarang;
+                sebelum = setelah;
+            } else {
+                sebelum = sekarang;
+                sekarang = sekarang->next;
+            }
+        }
+    } while (tukar);
+    cout << "Tugas diurutkan berdasarkan deadline.\n";
+}
+
