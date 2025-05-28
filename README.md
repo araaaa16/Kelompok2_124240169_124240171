@@ -11,7 +11,7 @@ struct Tugas {
     Tugas* next;        // POINTER - menunjuk ke node berikutnya (linked list)
 };
 
-// POINTER - penunjuk ke node pertama dalam linked list
+// POINTER - Penunjuk ke node pertama dalam linked list
 Tugas* head = nullptr;
 
 // FUNCTION: ngubah tanggal dari format DD-MM-YYYY menjadi angka YYYYMMDD
