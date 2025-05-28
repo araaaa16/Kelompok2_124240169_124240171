@@ -1,11 +1,11 @@
-#include <iostream>     
-#include <fstream>      
-#include <string>       
+#include <iostream>     // Input/output
+#include <fstream>      // File handling
+#include <string>       // Tipe data string
 using namespace std;
 
 struct Tugas {
     string nama;
-    string deadline;    // format: DD-MM-YYYY
+    string deadline;    // Format: DD-MM-YYYY
     string matkul;
     bool selesai;
     Tugas* next;        // POINTER - menunjuk ke node berikutnya (linked list)
