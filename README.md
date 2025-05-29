@@ -195,3 +195,14 @@ void menu() {
     muatDariFile("todolist.txt");
 
     do {
+       cout << "\n ============================== \n";
+        cout << "|       TO-DO LIST TUGAS       |\n";
+        cout << "|------------------------------|\n";
+        cout << "| 1. Tambah Tugas              |\n";
+        cout << "| 2. Tampilkan Semua Tugas     |\n";
+        cout << "| 3. Cari Tugas                |\n";
+        cout << "| 4. Edit Tugas                |\n";
+        cout << "| 5. Tandai Selesai            |\n";
+        cout << "| 6. Hapus Tugas               |\n";
+        cout << "| 7. Simpan & Keluar           |\n";
+        cout << " ============================== \n"; 
