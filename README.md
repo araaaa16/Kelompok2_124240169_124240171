@@ -14,7 +14,7 @@ struct Tugas {
 // POINTER - Penunjuk ke node pertama dalam linked list
 Tugas* head = nullptr;
 
-// FUNCTION: ngubah tanggal dari format DD-MM-YYYY menjadi angka YYYYMMDD
+// Mengubah tanggal dari format DD-MM-YYYY menjadi angka YYYYMMDD
 int ubahTanggalKeAngka(const string& tgl) {
     int d, m, y;
     sscanf(tgl.c_str(), "%d-%d-%d", &d, &m, &y);
@@ -91,7 +91,7 @@ void editTugas(string namaLama) {
     cout << " Tugas tidak ditemukan.\n";
 }
 
-// tandai tugas sebagai selesai
+// Menandai tugas sebagai selesai
 void tandaiSelesai(string nama) {
     Tugas* t = head;
     while (t) {
@@ -105,7 +105,7 @@ void tandaiSelesai(string nama) {
     cout << "Tugas tidak ditemukan.\n";
 }
 
-// menghapus tugas
+// Menghapus tugas
 void hapusTugas(string nama) {
     Tugas* t = head;
     Tugas* sebelum = nullptr;
