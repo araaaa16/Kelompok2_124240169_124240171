@@ -195,7 +195,7 @@ void menu() {
     muatDariFile("todolist.txt");
 
     do {
-       cout << "\n ============================== \n";
+        cout << "\n ============================== \n";
         cout << "|       TO-DO LIST TUGAS       |\n";
         cout << "|------------------------------|\n";
         cout << "| 1. Tambah Tugas              |\n";
@@ -206,3 +206,8 @@ void menu() {
         cout << "| 6. Hapus Tugas               |\n";
         cout << "| 7. Simpan & Keluar           |\n";
         cout << " ============================== \n"; 
+
+        cout << "Pilihan Anda: ";
+        cin >> pilih;
+        cin.ignore();
+        system("cls");  
