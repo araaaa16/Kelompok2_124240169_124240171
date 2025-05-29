@@ -211,3 +211,45 @@ void menu() {
         cin >> pilih;
         cin.ignore();
         system("cls");  
+
+         switch (pilih) {
+            case 1:
+                cout << "Nama Tugas: "; getline(cin, nama);
+                cout << "Deadline (DD-MM-YYYY): "; getline(cin, deadline);
+                cout << "Mata Kuliah: "; getline(cin, matkul);
+                tambahTugas(nama, deadline, matkul);
+                break;
+            case 2:
+                urutkanDeadline();
+                tampilkanTugas();
+                break;
+            case 3:
+                cout << "Masukkan nama tugas: "; getline(cin, nama);
+                cariTugas(nama);
+                break;
+            case 4:
+                cout << "Nama tugas yang ingin diedit: "; getline(cin, nama);
+                editTugas(nama);
+                break;
+            case 5:
+                cout << "Nama tugas yang selesai: "; getline(cin, nama);
+                tandaiSelesai(nama);
+                break;
+            case 6:
+                cout << "Nama tugas yang akan dihapus: "; getline(cin, nama);
+                hapusTugas(nama);
+                break;
+            case 7:
+                simpanKeFile("todolist.txt");
+                cout << "Keluar dari program.\n";
+                break;
+            default:
+                cout << "Pilihan tidak valid.\n";
+        }
+    } while (pilih != 7);
+}
+
+int main() {
+    menu();
+    return 0;
+}
