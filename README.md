@@ -35,7 +35,7 @@ void tambahTugas(string nama, string deadline, string matkul) {
     cout << "Tugas ditambahkan.\n";
 }
 
-// LINKED LIST - menampilkan semua tugas dengan tampilan tabel (versi ASCII)
+// LINKED LIST - menampilkan semua tugas dengan tampilan tabel
 void tampilkanTugas() {
     if (!head) {
         cout << "Tidak ada tugas.";
@@ -74,7 +74,7 @@ void cariTugas(string kunci) {
         cout << "Tugas tidak ditemukan.\n";
 }
 
-// EDITING - ngedit informasi tugas
+// EDITING - edit informasi tugas
 void editTugas(string namaLama) {
     Tugas* t = head;
     while (t) {
