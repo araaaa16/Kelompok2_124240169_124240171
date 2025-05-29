@@ -187,3 +187,11 @@ void urutkanDeadline() {
     cout << "Tugas diurutkan berdasarkan deadline.\n";
 }
 
+// MENU UTAMA
+void menu() {
+    int pilih;
+    string nama, deadline, matkul;
+
+    muatDariFile("todolist.txt");
+
+    do {
